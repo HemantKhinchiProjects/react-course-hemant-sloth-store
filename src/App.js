@@ -17,10 +17,10 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/">
-            <Home />
+          <Route exact path="/" element={<div>Home</div>}>
+            {/* <Home /> */}
           </Route>
-          <Route exact path="/about">
+          {/* <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/cart">
@@ -28,7 +28,7 @@ export default function App() {
           </Route>
           <Route exact path="/products">
             <Products />
-          </Route>
+          </Route> */}
         </Routes>
       </BrowserRouter>
     </>
