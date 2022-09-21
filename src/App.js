@@ -17,18 +17,10 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<div>Home</div>}>
-            {/* <Home /> */}
-          </Route>
-          {/* <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/cart">
-            <Cart />
-          </Route>
-          <Route exact path="/products">
-            <Products />
-          </Route> */}
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/products" element={<Products />} />
         </Routes>
       </BrowserRouter>
     </>
