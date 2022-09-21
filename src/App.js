@@ -1,11 +1,36 @@
 import React from 'react';
 import './style.css';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  Home,
+  SingleProduct,
+  Cart,
+  Checkout,
+  Error,
+  About,
+  Products,
+  PrivateRoute,
+  AuthWrapper,
+} from './pages';
 export default function App() {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+          <Route exact path="/products">
+            <Products />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
