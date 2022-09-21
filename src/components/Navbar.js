@@ -16,6 +16,21 @@ const Nav = () => {
             />
           </Link>
         </div>
+        <ul className="nav-links">
+          {links.map((link) => {
+            const { id, text, url } = link;
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            );
+          })}
+          {myUser && (
+            <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          )}
+        </ul>
       </div>
     </NavContainer>
   );
