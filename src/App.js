@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import {
   Home,
   SingleProduct,
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-      {/* <Navbar/> */}
+        {/* <Navbar/> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
@@ -30,6 +31,7 @@ export default function App() {
           /> */}
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
