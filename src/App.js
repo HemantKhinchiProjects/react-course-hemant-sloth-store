@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import {
   Home,
@@ -19,6 +20,7 @@ export default function App() {
     <>
       <BrowserRouter>
         <Navbar />
+        <Sidebar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
