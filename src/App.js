@@ -20,6 +20,7 @@ export default function App() {
     <>
       <BrowserRouter>
         <Navbar />
+
         {/* <Sidebar /> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
