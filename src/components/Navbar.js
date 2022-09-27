@@ -3,10 +3,12 @@ import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { links } from '../utils/constants';
 import styled from 'styled-components';
-//import CartButtons from './CartButtons';
-//import { useUserContext } from '../context/user_context';
+import CartButtons from './CartButtons';
+import { useUserContext } from '../context/user_context';
+import { useProductsContext } from '../context/products_context';
 const Nav = () => {
   //const { myUser } = useUserContext();
+  const { openSidebar } = useProductsContext();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -17,6 +19,9 @@ const Nav = () => {
               alt="comfy sloth"
             />
           </Link>
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
+            <FaBars />
+          </button>
         </div>
         <ul className="nav-links">
           {links.map((link) => {
