@@ -1,24 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { useProductsContext } from '../context/products_context'
+import { useProductsContext } from '../context/products_context';
 import { FaTimes } from 'react-icons/fa';
 import { links } from '../utils/constants';
 import styled from 'styled-components';
-import CartButtons from './CartButtons';
+import CartButtons from './CartButtons/CartButtons';
+import { useUserContext } from '../context/user_context';
 const Sidebar = () => {
-  //const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+
   return (
     <SidebarContainer>
-      <aside className="sidebar show-sidebar"></aside>
-      <div className="sidebar-header">
-        <img
-          src="https://www.survey-digital.com/wp-content/uploads/2022/03/logo-6.svg"
-          className="logo"
-          alt="comfy sloth"
-        />
-        <button className="close-btn" type="button">
-          <FaTimes />
-        </button>
+      <aside className="sidebar show-sidebar">
+        <div className="sidebar-header">
+          <img
+            src="https://www.survey-digital.com/wp-content/uploads/2022/03/logo-6.svg"
+            className="logo"
+            alt="comfy sloth"
+          />
+          <button className="close-btn" type="button">
+            <FaTimes />
+          </button>
+        </div>
         <ul className="links">
           {links.map(({ id, text, url }) => {
             return (
@@ -28,8 +31,8 @@ const Sidebar = () => {
             );
           })}
         </ul>
-        {/* <CartButtons /> */}
-      </div>
+        <CartButtons />
+      </aside>
     </SidebarContainer>
   );
 };
