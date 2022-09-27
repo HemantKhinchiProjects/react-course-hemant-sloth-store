@@ -30,6 +30,9 @@ const Sidebar = () => {
               </li>
             );
           })}
+          <li>
+            <Link to='/checkout'>Checkout</Link>
+          </li>
         </ul>
         {/* <CartButtons /> */}
       </aside>
