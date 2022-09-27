@@ -11,14 +11,17 @@ const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <aside className="sidebar show-sidebar">
+      <aside
+        className="sidebar show-sidebar"
+        className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
+      >
         <div className="sidebar-header">
           <img
             src="https://www.survey-digital.com/wp-content/uploads/2022/03/logo-6.svg"
             className="logo"
             alt="comfy sloth"
           />
-          <button className="close-btn" type="button">
+          <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -31,7 +34,7 @@ const Sidebar = () => {
             );
           })}
           <li>
-            <Link to='/checkout'>Checkout</Link>
+            <Link to="/checkout">Checkout</Link>
           </li>
         </ul>
         {/* <CartButtons /> */}
