@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Error from './Error';
 import Loading from './Loading';
 import styled from 'styled-components';
+import Product from './Product';
 const FeaturedProducts = () => {
   const {
     products_loading: loading,
@@ -22,7 +23,11 @@ const FeaturedProducts = () => {
         <h2>featured products</h2>
         <div className="underline"></div>
       </div>
-      <div className="section-center featured"></div>
+      <div className="section-center featured">
+        {featured.slice(0, 3).map((product) => {
+          return <Product key={product.id} {...product} />;
+        })}
+      </div>
       <Link to="/products" className="btn">
         all products
       </Link>
