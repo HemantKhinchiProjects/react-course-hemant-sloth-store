@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useProductsContext } from '../context/products_context';
 import { single_product_url as url } from '../utils/constants';
 import { formatPrice } from '../utils/helpers';
@@ -14,8 +14,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const SingleProductPage = () => {
+  console.log(useParams());
   const { id } = useParams();
-  const history = useHistory();
+  const history = useNavigate();
   const {
     single_product_loading: loading,
     single_product_error: error,
@@ -56,6 +57,7 @@ const SingleProductPage = () => {
   } = product;
   return (
     <Wrapper>
+      {console.log('asdfasdf')}
       <PageHero title={name} product />
       <div className="section section-center page">
         <Link to="/products" className="btn">
@@ -65,7 +67,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <Stars stars={stars} reviews={reviews} />
+            {/* <Stars stars={stars} reviews={reviews} /> */}
             <h5 className="price"> {formatPrice(price)}</h5>
             <p className="desc"> {description}</p>
             <p className="info">
@@ -81,7 +83,7 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart product={product} />}
+            {/* {stock > 0 && <AddToCart product={product} />} */}
           </section>
         </div>
       </div>
