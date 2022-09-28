@@ -14,7 +14,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const SingleProductPage = () => {
-  console.log(useParams());
+  // console.log(useParams());// singal product page
   const { id } = useParams();
   const history = useNavigate();
   const {
@@ -57,7 +57,6 @@ const SingleProductPage = () => {
   } = product;
   return (
     <Wrapper>
-      {console.log('asdfasdf')}
       <PageHero title={name} product />
       <div className="section section-center page">
         <Link to="/products" className="btn">
