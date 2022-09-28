@@ -31,7 +31,7 @@ export const ProductsProvider = ({ children }) => {
 
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
-    console.log('asdf');
+    //console.log('asdf');
   };
   const closeSidebar = () => {
     dispatch({ type: SIDEBAR_CLOSE });
@@ -54,6 +54,7 @@ export const ProductsProvider = ({ children }) => {
     try {
       const response = await axios.get(url);
       const singleProduct = response.data;
+
       dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
     } catch (error) {
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
