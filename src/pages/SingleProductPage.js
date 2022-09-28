@@ -7,7 +7,7 @@ import Loading from '../components/Loading';
 import Error from '../components/Error';
 import ProductImages from '../components/ProductImages';
 //import AddToCart from '../components/AddToCart';
-//import Stars from '../components/Stars';
+import Stars from '../components/Stars';
 import PageHero from '../components/PageHero';
 
 import styled from 'styled-components';
@@ -66,7 +66,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            {/* <Stars stars={stars} reviews={reviews} /> */}
+            <Stars stars={stars} reviews={reviews} />
             <h5 className="price"> {formatPrice(price)}</h5>
             <p className="desc"> {description}</p>
             <p className="info">
